@@ -12,9 +12,9 @@
     function controller (scope , $sce){
         scope.config = {
             sources: [
-                {src: $sce.trustAsResourceUrl("http://static.videogular.com/assets/videos/videogular.mp4"), type: "video/mp4"},
-                {src: $sce.trustAsResourceUrl("http://static.videogular.com/assets/videos/videogular.webm"), type: "video/webm"},
-                {src: $sce.trustAsResourceUrl("http://static.videogular.com/assets/videos/videogular.ogg"), type: "video/ogg"}
+                {src: $sce.trustAsResourceUrl("../../vid/match-vid.mp4"), type: "video/mp4"},
+                // {src: $sce.trustAsResourceUrl("http://static.videogular.com/assets/videos/videogular.webm"), type: "video/webm"},
+                // {src: $sce.trustAsResourceUrl("http://static.videogular.com/assets/videos/videogular.ogg"), type: "video/ogg"}
             ],
             tracks: [
                 {
@@ -27,7 +27,7 @@
             ],
             theme: "bower_components/videogular-themes-default/videogular.css",
             plugins: {
-                poster: "http://www.videogular.com/assets/images/videogular.png"
+            poster: ""
             }
         };
     }
