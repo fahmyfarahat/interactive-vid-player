@@ -10,7 +10,11 @@
 
 (function(){
     function controller (scope , $sce){
+
         scope.config = {
+            autoHide: true,
+            autoHideTime: 3000,
+            autoPlay: false,
             sources: [
                 {src: $sce.trustAsResourceUrl("../../vid/match-vid.mp4"), type: "video/mp4"},
                 // {src: $sce.trustAsResourceUrl("http://static.videogular.com/assets/videos/videogular.webm"), type: "video/webm"},
