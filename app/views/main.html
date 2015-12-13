@@ -1,5 +1,4 @@
-<videogular id="videogular"  
-vg-player-ready="onPlayerReady($API)"  vg-theme="config.theme" ng-click="chech($API)">
+<videogular id="videogular" vg-theme="config.theme">
     <vg-media vg-src="config.sources">
     </vg-media>
 
@@ -8,10 +7,13 @@ vg-player-ready="onPlayerReady($API)"  vg-theme="config.theme" ng-click="chech($
             <img class="logo" src="/images/logo-top.png" height="20">
         </div>
     </div>
+    
     <right-nav></right-nav>
 
 
-    <vg-controls>
+    <vg-controls 
+        vg-autohide="config.plugins.controls.autoHide" 
+        vg-autohide-time="config.plugins.controls.autoHideTime">
         <!-- <vg-play-pause-button></vg-play-pause-button> -->
         <!-- <vg-time-display>{{ currentTime | date:'mm:ss' }}</vg-time-display> -->
 <!--         <vg-scrub-bar>

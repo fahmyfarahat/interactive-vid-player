@@ -8,26 +8,22 @@
  *
  * Main module of the application.
  */
-angular
-  .module('koraPlayerApp', [
+var modules = [
     'ngRoute',
     'ngSanitize',
     "com.2fdevs.videogular",
     "com.2fdevs.videogular.plugins.controls",
     "com.2fdevs.videogular.plugins.overlayplay",
-    "com.2fdevs.videogular.plugins.poster"
-  ])
-  .config(function ($routeProvider) {
+    "com.2fdevs.videogular.plugins.poster",
+    'ui.bootstrap'
+  ];
+var app = angular.module('koraPlayerApp', modules);
+  app.config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
         controllerAs: 'main'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
       })
       .otherwise({
         redirectTo: '/'

@@ -12,10 +12,95 @@
         return {
           templateUrl: 'views/directives/right_nav.html',
           restrict: 'E',
+          scope:{},
           require: '^videogular',
           link: function postLink(scope, element, attrs, API) {
+
+            scope.taps = [{
+                name:'التشكيله',
+                icon:'formattion',
+            },{
+                name:'البدلاء',
+                icon:'bench'
+            },{
+                name:'خطط اللعب',
+                icon:'plan'
+            },{
+                name:'الاحصائيات',
+                icon:'statistics'
+            },{
+                name:'مناطق اللعب',
+                icon:'playing-areas'
+            }];
+
+            scope.players = [{
+                name:'سعد سمير',
+                number:11,
+                active:false
+            },{
+                name:'سعد سمير',
+                number:11,
+                active:false
+            },{
+                name:'سعد سمير',
+                number:11,
+                active:false
+            },{
+                name:'سعد سمير',
+                number:11,
+                active:false
+            },{
+                name:'سعد سمير',
+                number:11,
+                active:false
+            },{
+                name:'سعد سمير',
+                number:11,
+                active:false
+            },{
+                name:'سعد سمير',
+                number:11,
+                active:false
+            },{
+                name:'سعد سمير',
+                number:11,
+                active:false
+            },{
+                name:'سعد سمير',
+                number:11,
+                active:false
+            },{
+                name:'سعد سمير',
+                number:11,
+                active:false
+            },{
+                name:'سعد سمير',
+                number:11,
+                active:false
+            }];
+
             console.log(API);
             scope.API = API;
+            scope.pitch = false;
+            scope.isopen = false;
+            scope.$watch('isopen', function(){
+                scope.pitch = scope.isopen;
+            });
+            scope.toggled = function(open){
+                scope.pitch = false;
+                scope.isToggled = open;
+            };
+            scope.playerInfo = function(player, e){
+                e.preventDefault();
+                e.stopPropagation();
+                if (scope.isToggled) {
+                    scope.pitch = scope.isToggled;
+                    scope.playerPitch = player;
+                    scope.playerPitch.id = scope.players.indexOf(player);
+                }
+
+                // console.log(player,  scope.isopen);
+            };
 
           }
         };
