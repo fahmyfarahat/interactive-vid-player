@@ -211,6 +211,17 @@ videogular vg-volume{
     float: right;
     padding: 7px 0px;
 }
+.game-events{
+    width: 90px;
+    font-size: 11px;
+    display: table-cell;
+    border-right: 1px solid rgba(255,255,255,0.5);
+    color: #fff;
+    text-align: center;
+    padding: 0px;
+    vertical-align: middle;
+
+}
 /****---------------------------****/
 @media (min-width: 1200px) {
     .videogular-container {
