@@ -9,7 +9,15 @@
  */
 
 (function(){
-    function controller (scope , $sce){
+    function controller (scope , $sce, Game){
+
+
+        Game.loadMatch().success(function(res){
+            var response = res.apiResults[0].league;
+            var leagueName = response.name;
+            scope.events = response.season.eventType[0].events[0];
+            console.log(scope.events.boxscores);
+        });
 
         scope.config = {
             "controls": false,
@@ -36,7 +44,7 @@
             //     url: "http://www.videogular.com/styles/themes/default/latest/videogular.css"
             // },
 
-            // theme: "bower_components/videogular-themes-default/videogular.css",
+            theme: "bower_components/videogular-themes-default/videogular.css",
             plugins: {
                 "controls": {
                   "autoHide": true,
@@ -48,5 +56,5 @@
     }
 
 angular.module('koraPlayerApp')
-  .controller('MainCtrl', ['$scope','$sce', controller]);
+  .controller('MainCtrl', ['$scope','$sce', 'gameFactory', controller]);
 })();

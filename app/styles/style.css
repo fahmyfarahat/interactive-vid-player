@@ -5,6 +5,7 @@ videogular vg-controls .controls-container, [videogular] vg-controls .controls-c
 }
 body{
     font-family: 'Droid Arabic Kufi', sans-serif;
+    /*background-color: #000;*/
 }
 div > videogular > vg-controls{
     height: 40px;
@@ -112,7 +113,7 @@ a, a:hover, a:visited, a:active{
     /*background-color: rgba(0, 0, 0, 0.6);*/
     border-radius: 0;
     /*height: calc(100% - 100px);*/
-    min-width: 272px;
+    min-width: 332px;
     height: 100%;
     border: none;
     -webkit-box-shadow: 0px 1px 0px 0px rgba(255,255,255,0.5);
@@ -127,14 +128,14 @@ a, a:hover, a:visited, a:active{
 .right-nav .dropdown-menu li > ul{
     background-color: rgba(0, 0, 0, 0.6);
     margin-left: 1px;
-    width: 135px;
+    width: 165px;
     height: 100%;
 }
 .right-nav ul li i{
     width: 100%;
 }
 .right-nav .dropdown-menu > li> ul > li > a{
-    padding: 10px;
+    padding:10px 5px;
     color: #fff;
     text-align: right;
 }
@@ -198,7 +199,7 @@ i.formattion{
     min-height: 190px;
     position: absolute;
     padding: 10px;
-    right: 272px;
+    right: 332px;
     top: 1px;
 }
 
@@ -225,8 +226,8 @@ videogular vg-volume{
 /****---------------------------****/
 @media (min-width: 1200px) {
     .videogular-container {
-        width: 1170px;
-        height: 658.125px;
+        width: 940px;
+        height: 528.75px;
     }
 }
 

@@ -12,7 +12,9 @@
         return {
           templateUrl: 'views/directives/right_nav.html',
           restrict: 'E',
-          scope:{},
+          scope:{
+            events:'='
+          },
           require: '^videogular',
           link: function postLink(scope, element, attrs, API) {
 
@@ -31,52 +33,6 @@
             },{
                 name:'مناطق اللعب',
                 icon:'playing-areas'
-            }];
-
-            scope.players = [{
-                name:'سعد سمير',
-                number:11,
-                active:false
-            },{
-                name:'سعد سمير',
-                number:11,
-                active:false
-            },{
-                name:'سعد سمير',
-                number:11,
-                active:false
-            },{
-                name:'سعد سمير',
-                number:11,
-                active:false
-            },{
-                name:'سعد سمير',
-                number:11,
-                active:false
-            },{
-                name:'سعد سمير',
-                number:11,
-                active:false
-            },{
-                name:'سعد سمير',
-                number:11,
-                active:false
-            },{
-                name:'سعد سمير',
-                number:11,
-                active:false
-            },{
-                name:'سعد سمير',
-                number:11,
-                active:false
-            },{
-                name:'سعد سمير',
-                number:11,
-                active:false
-            },{
-                name:'سعد سمير',
-                number:11,
-                active:false
             }];
 
             console.log(API);

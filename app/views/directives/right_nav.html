@@ -1,4 +1,4 @@
-<div class="vg-controls-right" ng-if="API.isFullScreen">
+<div class="vg-controls-right" ng-if="API.isFullScreen || true">
     <div class="vd-container right-nav" >
         <ul>
         <li ng-repeat="tap in taps" is-open="isopen" uib-dropdown on-toggle="toggled(open)">
@@ -18,8 +18,11 @@
                         </li>
                         
                         <!-- player list -->
-                        <li ng-repeat="player in players">
-                        <a href ng-click="playerInfo(player, $event)"><span>{{player.number}}</span> {{player.name}}</a></li>
+                        <li ng-repeat="players in events.boxscores[0].players">
+                        <a href ng-click="playerInfo(player, $event)">
+                        <span>{{players.player.uniform}}</span> 
+                        {{players.player.displayName}}</a>
+                        </li>
                     </ul>
                 </li>
                 <li>
