@@ -17,7 +17,8 @@
           },
           require: '^videogular',
           link: function postLink(scope, element, attrs, API) {
-
+            scope.home = 0;
+            scope.away = 1;
             scope.taps = [{
                 name:'التشكيله',
                 icon:'formattion',
@@ -35,7 +36,7 @@
                 icon:'playing-areas'
             }];
 
-            console.log(API);
+            console.log('vid API: ',API);
             scope.API = API;
             scope.pitch = false;
             scope.isopen = false;
@@ -52,10 +53,10 @@
                 if (scope.isToggled) {
                     scope.pitch = scope.isToggled;
                     scope.playerPitch = player;
-                    scope.playerPitch.id = scope.players.indexOf(player);
+                    // scope.playerPitch.id = scope.players.indexOf(player);
                 }
 
-                // console.log(player,  scope.isopen);
+                console.log(player,  scope.isopen);
             };
 
           }

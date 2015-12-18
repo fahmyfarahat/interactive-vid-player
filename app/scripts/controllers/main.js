@@ -12,12 +12,15 @@
     function controller (scope , $sce, Game){
 
 
-        Game.loadMatch().success(function(res){
-            var response = res.apiResults[0].league;
-            var leagueName = response.name;
-            scope.events = response.season.eventType[0].events[0];
-            console.log(scope.events.boxscores);
-        });
+        function _loadGame(){
+            Game.loadMatch().success(function(res){
+                var response = res.apiResults[0].league;
+                var leagueName = response.name;
+                scope.events = response.season.eventType[0].events[0];
+                console.log('events: ', scope.events);
+            });
+        }
+        _loadGame();
 
         scope.config = {
             "controls": false,
