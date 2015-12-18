@@ -55,6 +55,9 @@ module.exports = function(config) {
       'bower_components/videogular-angulartics/vg-analytics.js',
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       'bower_components/lodash/lodash.js',
+      'bower_components/jquery-mousewheel/jquery.mousewheel.js',
+      'bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js',
+      'bower_components/ng-scrollbars/dist/scrollbars.min.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",

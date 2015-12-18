@@ -21,22 +21,17 @@
 
             <a href uib-dropdown-toggle>لحظه بلحظه</a>
             <i class="fa fa-caret-up fa-3x" ng-if="status.pbpIsOpen"></i>
-            <div class="pbp-dropdown uib-dropdown-menu">
-
-            <div class="scrollme">
-              <table cellpadding="10" class="table table-hover">
-                <tbody>
-                <tr ng-repeat="pbp in pbpObj">
-                    <td class="text-center">
-                    <i>{{pbp.time.minutes}}</i>
-                    </td>
-                  <td>
-                    {{pbp.playText}}
-                  </td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
+            <div 
+            class="pbp-dropdown uib-dropdown-menu" 
+            ng-scrollbars ng-scrollbars-config="config.scrollbars">
+                <div class="row" ng-repeat="pbp in pbpObj">
+                     <p class="minutes">
+                     {{pbp.time.minutes}}
+                     </p>
+                      <p class="playText">
+                        {{pbp.playText}}
+                      </p>
+                </div>
 
             </div>
         </div>

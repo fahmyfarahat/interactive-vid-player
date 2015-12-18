@@ -239,12 +239,32 @@ videogular vg-volume{
 }
 .pbp-dropdown{
     background-color: rgba(0, 0, 0, 0.6);
-    padding: 10px;
-    min-width:250px;
-    top: -55px;
+    padding: 10px 0;
+    min-width:220px;
+    top: -232px;
+    max-height: 220px;
     left: 10px;
+    font-size: 12px;
+    font-weight: normal;
     border-radius: 0;
 } 
+.playText{
+    width: 75%;
+    float: left;
+    color: rgba(255,255,255,0.8);
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+    text-align: left;
+    padding:2px;
+}
+.pbp-dropdown .minutes{
+    margin-left: 15px;
+    width: 15%;
+    padding:2px 5px;
+    float: left;
+    color: #c53441;
+    font-weight: bold;
+    text-align: center;
+}
 /****---------------------------****/
 @media (min-width: 1200px) {
     .videogular-container {

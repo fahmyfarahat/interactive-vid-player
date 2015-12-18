@@ -15,10 +15,19 @@ var modules = [
     "com.2fdevs.videogular.plugins.controls",
     "com.2fdevs.videogular.plugins.overlayplay",
     "com.2fdevs.videogular.plugins.poster",
-    'ui.bootstrap'
+    "ui.bootstrap",
+    "ngScrollbars"
   ];
 var app = angular.module('koraPlayerApp', modules);
-  app.config(function ($routeProvider) {
+  app.config(function ($routeProvider, ScrollBarsProvider) {
+    ScrollBarsProvider.defaults = {
+        scrollButtons: {
+            scrollAmount: 'auto', // scroll amount when button pressed
+            enable: false // enable scrolling buttons by default
+        },
+        theme: 'dark',
+        axis: 'y' // enable 2 axis scrollbars by default
+    };
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',

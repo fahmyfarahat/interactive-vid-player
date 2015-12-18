@@ -17,7 +17,7 @@
                 var response = res.apiResults[0].league;
                 var leagueName = response.name;
                 scope.events = response.season.eventType[0].events[0];
-                scope.pbpObj = scope.events.pbp;
+                scope.pbpObj = scope.events.pbp.reverse();
                 console.log('pbpObj: ', scope.pbpObj);
                 console.log('events: ', scope.events);
             });
@@ -58,6 +58,15 @@
                   "autoHideTime": 1000
                 },
                 poster: ""
+            },
+            scrollbars:{
+                autoHideScrollbar: false,
+                theme: 'light',
+                setHeight: 230,
+                scrollInertia: 0,
+                advanced:{
+                    updateOnContentResize: true
+                },
             }
         };
     }
