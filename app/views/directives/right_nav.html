@@ -1,54 +1,31 @@
 <div class="vg-controls-right" ng-if="API.isFullScreen || true">
     <div class="vd-container right-nav" >
         <ul>
-        <li ng-repeat="tap in taps" is-open="isopen = false" uib-dropdown on-toggle="toggled(open)">
+        <li ng-repeat="tap in taps" is-open="tab.status" uib-dropdown on-toggle="toggled(open)">
             <a 
             uib-dropdown-toggle 
             href>
                 <i class="{{tap.icon}}"></i> 
                 {{tap.name}}
             </a>
-            <ul ng-if="tap.icon === 'formattion'" class="uib-dropdown-menu">
-                <li>
-                    <ul class="col-md-6">
-                        <li 
-                        ng-if="tap.icon === 'formattion'"  
-                        class="team-title">
-                        <img src="http://api.123kora.code95.info/uploads/images/teams/logos/1445427374_54d3794602252f1010000273_1139.svg" height="24"/>
-                        </li>
-                        
-                        <!-- player list -->
-                        <li 
-                        ng-repeat="players in events.boxscores[home].players" 
-                        ng-if="players.isGameStarted === true">
-                        <a href ng-click="playerInfo(players, $event)">
-                        <span>{{players.player.uniform}}</span> 
-                        {{players.player.displayName}}</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <ul class="col-md-6">
-                        <li 
-                        ng-if="tap.icon === 'formattion'"  
-                        class="team-title">
-                        <img src="http://api.123kora.code95.info/uploads/images/teams/logos/1445438373_54d3795702252f10100002dc_1129.svg" height="24"/>
-                        </li>
-                        
-                        <!-- player list -->
-                        <li 
-                        ng-repeat="players in events.boxscores[away].players" 
-                        ng-if="players.isGameStarted === true">
-                        <a href ng-click="playerInfo(players, $event)">
-                        <span>{{players.player.uniform}}</span> 
-                        {{players.player.displayName}}</a>
-                        </li>
-                    </ul>
-                </li>
-                <div id="playe_pitch" ng-if="pitch">
-                    <span>{{playerPitch | json}}</span>
-                </div>
-            </ul>
+            <dropdown-player-list 
+            data="events"
+            is-toggled="isToggled"
+            pitch="pitch"
+            tab-name="formattion"
+            ng-if="tap.icon === 'formattion'" 
+            class="uib-dropdown-menu">
+            </dropdown-player-list>   
+                     
+            <dropdown-player-list 
+            data="events"
+            is-toggled="isToggled"
+            pitch="pitch"
+            tab-name="bench"
+            ng-if="tap.icon === 'bench'" 
+            class="uib-dropdown-menu">
+            </dropdown-player-list>
+            
         </li>
         </ul>
     </div>

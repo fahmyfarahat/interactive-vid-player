@@ -14,10 +14,9 @@
 
         function _loadGame(){
             Game.loadMatch().success(function(res){
-                var response = res.apiResults[0].league;
-                var leagueName = response.name;
-                scope.events = response.season.eventType[0].events[0];
-                scope.pbpObj = scope.events.pbp.reverse();
+                var response = res;
+                scope.events = response;
+                scope.pbpObj = response.pbp.reverse();
                 console.log('pbpObj: ', scope.pbpObj);
                 console.log('events: ', scope.events);
             });
@@ -34,7 +33,7 @@
             "virtualClipDuration": -1,
             "preload": "auto",
             sources: [
-                {src: $sce.trustAsResourceUrl("../../vid/match-vid.mp4"), type: "video/mp4"},
+                {src: $sce.trustAsResourceUrl("../../vid/juv-fior.mkv"), type: "video/mp4"},
                 // {src: $sce.trustAsResourceUrl("http://static.videogular.com/assets/videos/videogular.webm"), type: "video/webm"},
                 // {src: $sce.trustAsResourceUrl("http://static.videogular.com/assets/videos/videogular.ogg"), type: "video/ogg"}
             ],

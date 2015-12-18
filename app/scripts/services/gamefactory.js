@@ -12,7 +12,7 @@
         var gameFactory = {};
 
         gameFactory.loadMatch = function(){
-            return $http.get('scripts/Juv-Fio.json');
+            return $http.get('scripts/Juv-Fio-ar.json');
         };
         return gameFactory;
     }

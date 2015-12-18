@@ -1,0 +1,61 @@
+<ul>
+    <li>
+        <ul class="col-md-6">
+            <li 
+            class="team-title">
+            <img src="http://api.123kora.code95.info/uploads/images/teams/logos/1445427374_54d3794602252f1010000273_1139.svg" height="24"/>
+            </li>
+            
+            <!-- player list -->
+            <li class="player-list" 
+            ng-if="tabName ==='formattion'"
+            ng-repeat="players in data['box_scores'][home].players" 
+            ng-if="players.isGameStarted === true">
+            <a href ng-click="playerInfo(players, $event)">
+            <span>{{players.player.uniform}}</span> 
+            {{players.player.displayName}}</a>
+            </li>
+
+            <!-- benchPlayers list -->
+            <li class="player-list" 
+            ng-if="tabName ==='bench'"
+            ng-repeat="benchPlayers in data['box_scores'][home].benchPlayers" 
+            >
+            <a href ng-click="playerInfo(benchPlayers, $event)">
+            <span>{{benchPlayers.player.uniform}}</span> 
+            {{benchPlayers.player.displayName}}</a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <ul class="col-md-6">
+            <li 
+            class="team-title">
+            <img src="http://api.123kora.code95.info/uploads/images/teams/logos/1445438373_54d3795702252f10100002dc_1129.svg" height="24"/>
+            </li>
+            
+            <!-- player list -->
+            <li class="player-list"
+            ng-if="tabName ==='formattion'"
+            ng-repeat="players in data['box_scores'][away].players" 
+            ng-if="players.isGameStarted === true">
+            <a href ng-click="playerInfo(players, $event)">
+            <span>{{players.player.uniform}}</span> 
+            {{players.player.displayName}}</a>
+            </li>
+
+            <!-- player list -->
+            <li class="player-list" 
+            ng-if="tabName ==='bench'"
+            ng-repeat="benchPlayers in data['box_scores'][away].benchPlayers" 
+            >
+            <a href ng-click="playerInfo(benchPlayers, $event)">
+            <span>{{benchPlayers.player.uniform}}</span> 
+            {{benchPlayers.player.displayName}}</a>
+            </li>
+        </ul>
+    </li>
+    <div id="playe_pitch" ng-if="pitch">
+        <span>{{playerPitch | json}}</span>
+    </div>
+</ul>
