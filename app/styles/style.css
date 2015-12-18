@@ -66,6 +66,9 @@ a, a:hover, a:visited, a:active{
 }
 
 /****------------right-nav-------****/
+.right-nav{
+    box-shadow: none;
+}
 .right-nav ul{
     list-style-type: none;
     margin: 0;
@@ -84,7 +87,7 @@ a, a:hover, a:visited, a:active{
 }
 
 .right-nav ul li a{
-    padding: 20px 5px;
+    padding: 16px 5px;
     display: inline-block;
     font-size: 12px;
     width: 100%;
@@ -212,9 +215,11 @@ videogular vg-volume{
     float: right;
     padding: 7px 0px;
 }
+/*******pbp-dropdown******/
 .game-events{
     width: 90px;
     font-size: 11px;
+    font-weight: bold;
     display: table-cell;
     border-right: 1px solid rgba(255,255,255,0.5);
     color: #fff;
@@ -223,6 +228,23 @@ videogular vg-volume{
     vertical-align: middle;
 
 }
+.game-events.open{
+    background-color: #c53441;
+}
+.game-events .fa{
+    position: absolute;
+    top: -21px;
+    left: 35px;
+    color: #c53441;
+}
+.pbp-dropdown{
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    min-width:250px;
+    top: -55px;
+    left: 10px;
+    border-radius: 0;
+} 
 /****---------------------------****/
 @media (min-width: 1200px) {
     .videogular-container {

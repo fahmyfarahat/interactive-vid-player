@@ -1,7 +1,7 @@
 <div class="vg-controls-right" ng-if="API.isFullScreen || true">
     <div class="vd-container right-nav" >
         <ul>
-        <li ng-repeat="tap in taps" is-open="isopen" uib-dropdown on-toggle="toggled(open)">
+        <li ng-repeat="tap in taps" is-open="isopen = false" uib-dropdown on-toggle="toggled(open)">
             <a 
             uib-dropdown-toggle 
             href>

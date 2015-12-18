@@ -17,11 +17,15 @@
                 var response = res.apiResults[0].league;
                 var leagueName = response.name;
                 scope.events = response.season.eventType[0].events[0];
+                scope.pbpObj = scope.events.pbp;
+                console.log('pbpObj: ', scope.pbpObj);
                 console.log('events: ', scope.events);
             });
         }
         _loadGame();
-
+        scope.status = {
+            'pbpIsOpen':false,
+        };
         scope.config = {
             "controls": false,
             "loop": false,
