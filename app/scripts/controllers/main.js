@@ -53,8 +53,8 @@
             theme: "bower_components/videogular-themes-default/videogular.css",
             plugins: {
                 "controls": {
-                  "autoHide": true,
-                  "autoHideTime": 1000
+                  "autoHide": false,
+                  "autoHideTime": 10000
                 },
                 poster: ""
             },
