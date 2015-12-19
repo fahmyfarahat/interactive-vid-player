@@ -1,0 +1,8 @@
+<div class="vg-controls-top">
+    <div class="vd-container">
+        <img class="logo" src="/images/logo-top.png" height="20">
+
+        <span ng-if="API.currentState === 'stop'">00:00</span>
+        <vg-time-display ng-if="API.currentState !== 'stop'">{{ currentTime - (1000*13) | date:'mm:ss' }}</vg-time-display>
+    </div>
+</div>
