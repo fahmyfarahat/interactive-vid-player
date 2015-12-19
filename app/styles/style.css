@@ -39,6 +39,10 @@ a, a:hover, a:visited, a:active{
     margin: 15px 10px;
     float: right;
 }
+.match-time{
+    margin: 15px 10px;
+    float: left;
+}
 .vg-controls-right{
     width: 80px;
     /*height: calc(100vh);*/

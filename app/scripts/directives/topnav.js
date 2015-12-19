@@ -7,7 +7,7 @@
  * # topnav
  */
 angular.module('koraPlayerApp')
-  .directive('topNav', function () {
+  .directive('topNav', function ($filter) {
     return {
         templateUrl: 'views/directives/top_nav.html',
         restrict: 'E',
@@ -15,8 +15,10 @@ angular.module('koraPlayerApp')
         link: function postLink(scope, element, attrs, API) {
 
             scope.API = API;           
-            scope.$watch('API.currentState', function(){
-                console.log(scope.API.currentState);
+            scope.$watch('API.currentTime', function(){
+                var currentTime = scope.API.currentTime - (1000*12.60);
+                var filter = $filter('date')(currentTime, 'mm:ss');
+                console.log(filter);
             });
       }
     };
