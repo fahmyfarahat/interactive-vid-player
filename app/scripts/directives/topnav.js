@@ -16,13 +16,34 @@ angular.module('koraPlayerApp')
         },
         require: '^videogular',
         link: function postLink(scope, element, attrs, API) {
+            scope.teamResult = {
+                'homeScore':0,
+                'awayScore':0
+            };
+            
+            function _loadGoals(){
+                angular.forEach(scope.periodDetails, function(period){
+                    angular.forEach(period.goals, function(goal){
+                        var minutes = goal.time.minutes ;
+                        var seconds = goal.time.seconds;
+                        var additionalMinutes = goal.time.additionalMinutes;
+                        var goalTimestamp = minutes + additionalMinutes+':'+''+seconds;
+                        if (goalTimestamp ===  scope.timeFilter) {
+                            scope.teamResult =  goal.currentScore;
+                        }
+                    });
+                });
 
-            scope.API = API;           
+            }
+
+            scope.API = API;
+             // console.log(scope.API.currentTime);
             scope.$watch('API.currentTime', function(){
-                var currentTime = scope.API.currentTime - (1000*12.60);
-                var filter = $filter('date')(currentTime, 'mm:ss');
-                console.log(filter);
+                scope.currentTime = scope.API.currentTime - (1000*12.60);
+                scope.timeFilter = $filter('date')(scope.currentTime, 'm:ss');
+                _loadGoals();
             });
+
       }
     };
   });
