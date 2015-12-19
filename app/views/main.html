@@ -18,14 +18,7 @@
             <div 
             class="pbp-dropdown uib-dropdown-menu" 
             ng-scrollbars ng-scrollbars-config="config.scrollbars">
-                <div class="row" ng-repeat="pbp in pbpObj">
-                     <p class="minutes">
-                     {{pbp.time.minutes}}
-                     </p>
-                      <p class="playText">
-                        {{pbp.playText}}
-                      </p>
-                </div>
+            <pbp pbp-obj="pbpObj"></pbp>
 
             </div>
         </div>

@@ -16,7 +16,7 @@
             Game.loadMatch().success(function(res){
                 var response = res;
                 scope.events = response;
-                scope.pbpObj = response.pbp.reverse();
+                scope.pbpObj = response.pbp;
                 console.log('period_details: ', response['period_details']);
                 console.log('events: ', scope.events);
             });
