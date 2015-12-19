@@ -35,6 +35,7 @@ a, a:hover, a:visited, a:active{
     -moz-box-shadow: 0px 1px 0px 0px rgba(255,255,255,0.5);
     box-shadow: 0px 1px 0px 0px rgba(255,255,255,0.5);
 }
+/****top-nav**/
 .logo{
     margin: 15px 10px;
     float: right;
@@ -42,6 +43,33 @@ a, a:hover, a:visited, a:active{
 .match-time{
     margin: 15px 10px;
     float: left;
+}
+.match-result{
+    width: 170px;
+    margin:auto;
+    padding: 5px 10px;
+}
+.match-result span{
+    width: 65px;
+    margin: 0 5px;
+    font-weight: bold;
+    font-size: 21px;
+}
+.match-result .team-home{
+    float: right;
+}
+.match-result .team-home i{
+    float: left;
+    font-style: normal;
+    padding: 5px;
+}
+.match-result .team-away{
+    float: left;
+}
+.match-result .team-away i{
+    padding: 5px;
+    font-style: normal;
+    float: right;
 }
 .vg-controls-right{
     width: 80px;

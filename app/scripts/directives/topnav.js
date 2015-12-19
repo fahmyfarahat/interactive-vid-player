@@ -11,6 +11,9 @@ angular.module('koraPlayerApp')
     return {
         templateUrl: 'views/directives/top_nav.html',
         restrict: 'E',
+        scope:{
+            periodDetails:'='
+        },
         require: '^videogular',
         link: function postLink(scope, element, attrs, API) {
 
