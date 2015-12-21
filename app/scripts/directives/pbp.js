@@ -19,26 +19,34 @@ angular.module('koraPlayerApp')
             scope.pbpData = [];
             scope.API = API;
 
-            function _load_pbp(timeFilter){
+            function _load_pbp(min){
                 angular.forEach(scope.pbpObj, function(item){
                     var minutes = item.time.minutes;
-                    // var seconds = item.time.seconds * 1000;
+                    var seconds = item.time.seconds;
                     // var additionalMinutes = item.time.additionalMinutes;
-                    // var goalTimestamp = minutes + seconds;
-                        if (minutes < 45) {
-                            if ( minutes.toString() === timeFilter){
-                                scope.pbpData.push({'time':item.time, 'playText':item.playText});
-                            }
+                    var goalTimestamp = minutes+':'+seconds;
+                    // console.log('goalTimestamp ',goalTimestamp);
+                    if (minutes < 5) {
+                        if (goalTimestamp.toString() === min){
+                            var index = scope.pbpData.indexOf({'time':item.time, 'playText':item.playText});
+                            console.log('index', index);
+                            scope.pbpData.push({'time':item.time, 'playText':item.playText});
                         }
+                    }
 
                 });
             }
 
-            setInterval(function(){
-                var currentTime =  scope.API.totalTime - scope.API.timeLeft;
-                var filterTime = $filter('date')(currentTime, 'm');
-                _load_pbp(filterTime);
-            }, 5000);
+            scope.$watch('API.currentTime', function(){
+                // var currentTime =  scope.API.totalTime - scope.API.timeLeft;
+                // var min = $filter('date')(currentTime, 'm:s');
+                // var sec = $filter('date')(currentTime, 's');
+                // console.log('time  ',min, sec);
+                var currentTime = scope.API.currentTime - (1000*12.60);
+                var timeFilter = $filter('date')(currentTime, 'm:ss');
+                _load_pbp(timeFilter);
+            });
+
 
 
         }

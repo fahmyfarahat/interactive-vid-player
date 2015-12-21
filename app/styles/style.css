@@ -306,6 +306,28 @@ videogular vg-volume{
 .mCSB_inside > .mCSB_container{
     margin-right: 15px;
 }
+/******statis-drop*****/
+.right-nav .statis-menu{
+    min-width: 100px;
+    margin:0 1px;
+}
+.statis-drop{
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+}
+.right-nav .statis-drop span a{
+    width: 100%;
+    height: auto;
+    display: block;
+    padding: 20px 0;
+    box-shadow: 0px 1px 0px 0px rgba(255,255,255,0.5) !important;
+}
+.right-nav .statis-drop span a:hover{
+    transition: 0.2s ease-out .2s;
+    background-color: rgba(0, 0, 0, 0.6);
+    text-decoration: none;
+}
 /****---------------------------****/
 @media (min-width: 1200px) {
     .videogular-container {
