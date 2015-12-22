@@ -328,6 +328,14 @@ videogular vg-volume{
     background-color: rgba(0, 0, 0, 0.6);
     text-decoration: none;
 }
+.player-list-container{
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 165px;
+    height: 100%;
+    position: absolute;
+    right: 101px;
+    top: 1px;
+}
 /****---------------------------****/
 @media (min-width: 1200px) {
     .videogular-container {

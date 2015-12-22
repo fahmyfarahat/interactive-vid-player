@@ -1,0 +1,16 @@
+<div class="statis-drop">
+<span><a href ng-click="playerList(g, $event)">الاهداف</a></span>
+</div>
+
+<div class="player-list-container" ng-if="playerListContainer">
+
+    <div class="box-players" ng-repeat="player in events['box_scores'][0].players">
+        <span ng-if="player.goals > 0">
+        <a href><i>{{player.player.uniform}}</i> {{player.player.shirtName}}</a></span>
+    </div>
+
+    <div class="box-players" ng-repeat="player in events['box_scores'][1].players">
+        <span ng-if="player.goals > 0">
+        <a href><i>{{player.player.uniform}}</i> {{player.player.shirtName}}</a></span>
+    </div>
+</div>

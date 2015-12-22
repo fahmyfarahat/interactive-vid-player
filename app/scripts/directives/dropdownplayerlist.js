@@ -21,15 +21,18 @@
           link: function postLink(scope, element, attrs) {
                 scope.home = 0;
                 scope.away = 1;
-                scope.pitch = false;
 
+                scope.$watch('isToggled', function(){
+                    if (!scope.isToggled) {
+                        scope.pitch = false;
+                    }
+                });
 
                 scope.playerInfo = function(player, e){
                     e.preventDefault();
                     e.stopPropagation();
                     if (scope.isToggled) {
                         scope.pitch = scope.isToggled;
-                        // scope.playerPitch.id = scope.players.indexOf(player);
                     }
                     scope.playerPitch = player;
 

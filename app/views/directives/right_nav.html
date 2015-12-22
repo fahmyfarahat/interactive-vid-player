@@ -1,19 +1,19 @@
 <div class="vg-controls-right" ng-if="API.isFullScreen || true">
     <div class="vd-container right-nav" >
         <ul>
-        <li ng-repeat="tap in taps" is-open="tab.status" uib-dropdown on-toggle="toggled(open)">
+        <li ng-repeat="tab in taps" is-open="tab.status" uib-dropdown on-toggle="toggled(open)">
             <a 
             uib-dropdown-toggle 
             href>
-                <i class="{{tap.icon}}"></i> 
-                {{tap.name}}
+                <i class="{{tab.icon}}"></i> 
+                {{tab.name}}
             </a>
             <dropdown-player-list 
             data="events"
             is-toggled="isToggled"
             pitch="pitch"
             tab-name="formattion"
-            ng-if="tap.icon === 'formattion'" 
+            ng-if="tab.icon === 'formattion'" 
             class="uib-dropdown-menu">
             </dropdown-player-list>   
                      
@@ -22,25 +22,16 @@
             is-toggled="isToggled"
             pitch="pitch"
             tab-name="bench"
-            ng-if="tap.icon === 'bench'" 
+            ng-if="tab.icon === 'bench'" 
             class="uib-dropdown-menu">
             </dropdown-player-list>
 
-            <div 
+            <statistics 
             is-toggled="isToggled"
-            ng-if="tap.icon === 'statistics'" 
+            ng-if="tab.icon === 'statistics'" 
             class="uib-dropdown-menu statis-menu">
-            <div class="statis-drop">
-            <span><a href>الاهداف</a></span>
-            <span><a href>الاهداف</a></span>
-            <span><a href>الاهداف</a></span>
-            <span><a href>الاهداف</a></span>
-            <span><a href>الاهداف</a></span>
-            <span><a href>الاهداف</a></span>
-            <span><a href>الاهداف</a></span>
-            <span><a href>الاهداف</a></span>
-            </div>
-            </div>
+
+            </statistics>
             
         </li>
         </ul>
