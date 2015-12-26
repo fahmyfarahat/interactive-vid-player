@@ -26,12 +26,12 @@
                 icon:'bench',
                 status:false
             },{
-                name:'خطط اللعب',
-                icon:'plan',
-                status:false
-            },{
                 name:'الاحصائيات',
                 icon:'statistics',
+                status:false
+            },{
+                name:'خطط اللعب',
+                icon:'plan',
                 status:false
             },{
                 name:'مناطق اللعب',

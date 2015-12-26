@@ -17,7 +17,7 @@
                 var response = res;
                 scope.events = response;
                 scope.pbpObj = response.pbp;
-                console.log('period_details: ', response['period_details']);
+                // console.log('period_details: ', response['period_details']);
                 console.log('events: ', scope.events);
             });
         }

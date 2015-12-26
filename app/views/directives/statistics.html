@@ -4,13 +4,18 @@
 
 <div class="player-list-container" ng-if="playerListContainer">
 
-    <div class="box-players" ng-repeat="player in events['box_scores'][0].players">
-        <span ng-if="player.goals > 0">
-        <a href><i>{{player.player.uniform}}</i> {{player.player.shirtName}}</a></span>
+    <div class="box-players" ng-repeat="goal in events['period_details'][0].goals">
+        <span>
+        <a href ng-click="playerInfo(goal, $event)">
+        <i>{{goal.player.uniform}}</i> {{goal.player.displayName}}</a></span>
     </div>
-
-    <div class="box-players" ng-repeat="player in events['box_scores'][1].players">
-        <span ng-if="player.goals > 0">
-        <a href><i>{{player.player.uniform}}</i> {{player.player.shirtName}}</a></span>
+    <!-- <i class="separate"></i> -->
+    <div class="box-players" ng-repeat="goal in events['period_details'][1].goals">
+        <span>
+        <a href ng-click="playerInfo(goal, $event)">
+        <i>{{goal.player.uniform}}</i> {{goal.player.displayName}}</a></span>
     </div>
+</div>
+<div id="playe_pitch" ng-if="pitch" style="right: 267px">
+    <pitch-player id="pitch_player"></pitch-player>
 </div>

@@ -18,13 +18,14 @@ angular.module('koraPlayerApp')
                     scope.playerListContainer = false;
                 }
             });
-            console.log('scope.events', scope.events.box_scores[0].players[0])
+            // console.log('scope.events', scope.events.box_scores[0].players[0])
             scope.playerInfo = function(player, e){
                 e.preventDefault();
                 e.stopPropagation();
                 if (scope.isToggled) {
                     scope.pitch = scope.isToggled;
                 }
+                scope.playerPitch = player;
             };
             scope.playerList = function(g, e){
                 e.preventDefault();
