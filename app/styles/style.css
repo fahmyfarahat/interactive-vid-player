@@ -5,7 +5,7 @@ videogular vg-controls .controls-container, [videogular] vg-controls .controls-c
 }
 body{
     font-family: 'Droid Arabic Kufi', sans-serif;
-    /*background-color: #000;*/
+    background-color: #111;
 }
 div > videogular > vg-controls{
     height: 40px;
