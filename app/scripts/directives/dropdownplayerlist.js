@@ -27,10 +27,17 @@
                         scope.pitch = false;
                     }
                 });
-
+                scope.stopEvent = function(e){
+                    if (e) {
+                        e.preventDefault();
+                        e.stopPropagation();  
+                    }  
+                };
                 scope.playerInfo = function(player, e){
-                    e.preventDefault();
-                    e.stopPropagation();
+                    if (e) {
+                        e.preventDefault();
+                        e.stopPropagation();  
+                    }
                     if (scope.isToggled) {
                         scope.pitch = scope.isToggled;
                     }

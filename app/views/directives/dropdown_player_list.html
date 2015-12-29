@@ -21,7 +21,7 @@
             ng-if="tabName ==='bench'"
             ng-repeat="benchPlayers in data['box_scores'][home].benchPlayers" 
             >
-            <a href ng-click="playerInfo(benchPlayers, $event)">
+            <a href ng-click="stopEvent($event)">
             <span>{{benchPlayers.player.uniform}}</span> 
             {{benchPlayers.player.displayName}}</a>
             </li>
@@ -49,7 +49,7 @@
             ng-if="tabName ==='bench'"
             ng-repeat="benchPlayers in data['box_scores'][away].benchPlayers" 
             >
-            <a href ng-click="playerInfo(benchPlayers, $event)">
+            <a href ng-click="stopEvent($event)">
             <span>{{benchPlayers.player.uniform}}</span> 
             {{benchPlayers.player.displayName}}</a>
             </li>
