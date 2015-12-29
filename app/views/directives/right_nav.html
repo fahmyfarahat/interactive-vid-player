@@ -30,8 +30,18 @@
             is-toggled="isToggled"
             ng-if="tab.icon === 'statistics'" 
             class="uib-dropdown-menu statis-menu">
-
             </statistics>
+
+            <div 
+            is-toggled="isToggled" 
+            id="playe_pitch" 
+            class="uib-dropdown-menu statis-menu" 
+            ng-if="tab.icon === 'plan'" 
+            style="right: 85px;top: 35%">
+                <pitch-player 
+                player-data="events">
+                 </pitch-player>
+            </div>
             
         </li>
         </ul>
