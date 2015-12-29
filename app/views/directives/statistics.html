@@ -1,8 +1,9 @@
 <div class="statis-drop">
-<span><a href ng-click="playerList(g, $event)">الاهداف</a></span>
+<span><a href ng-click="playerGoalList(g, $event)">الاهداف</a></span>
+<span><a href ng-click="playerShotList(g, $event)">التصويبات</a></span>
 </div>
 
-<div class="player-list-container" ng-if="playerListContainer">
+<div class="player-list-container" ng-if="playerGoalsListContainer">
 
     <div class="box-players" ng-repeat="goal in events['period_details'][0].goals">
         <span>
@@ -16,6 +17,22 @@
         <i>{{goal.player.uniform}}</i> {{goal.player.displayName}}</a></span>
     </div>
 </div>
+
+<div class="player-list-container" ng-if="playerShotListContainer">
+
+    <div class="box-players" ng-repeat="shots in events['period_details'][0].shots">
+        <span>
+        <a href ng-click="playerInfo(shots, $event)">
+        <i>{{shots.player.uniform}}</i> {{shots.player.displayName}}</a></span>
+    </div>
+    <!-- <i class="separate"></i> -->
+    <div class="box-players" ng-repeat="shots in events['period_details'][1].shots">
+        <span>
+        <a href ng-click="playerInfo(shots, $event)">
+        <i>{{shots.player.uniform}}</i> {{shots.player.displayName}}</a></span>
+    </div>
+</div>
+
 <div id="playe_pitch" ng-if="pitch" style="right: 267px">
-    <pitch-player id="pitch_player" id-selector="pitch_player" player-data="playerPitch"></pitch-player>
+    <pitch-player id="pitch_player" player-data="playerPitch"></pitch-player>
 </div>

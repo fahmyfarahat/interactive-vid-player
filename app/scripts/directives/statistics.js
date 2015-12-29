@@ -15,7 +15,8 @@ angular.module('koraPlayerApp')
             scope.$watch('isToggled', function(){
                 if (!scope.isToggled) {
                     scope.pitch = false;
-                    scope.playerListContainer = false;
+                    scope.playerGoalsListContainer = false;
+                    scope.playerShotListContainer = false;
                 }
             });
             // console.log('scope.events', scope.events.box_scores[0].players[0])
@@ -27,11 +28,23 @@ angular.module('koraPlayerApp')
                 }
                 scope.playerPitch = player;
             };
-            scope.playerList = function(g, e){
+            scope.playerGoalList = function(g, e){
                 e.preventDefault();
                 e.stopPropagation();
                 if (scope.isToggled) {
-                    scope.playerListContainer = scope.isToggled;
+                    scope.pitch = false;
+                    scope.playerShotListContainer = false;
+                    scope.playerGoalsListContainer = scope.isToggled;
+                }
+            };
+            scope.playerShotList = function(g, e){
+                e.preventDefault();
+                e.stopPropagation();
+                if (scope.isToggled) {
+                    scope.pitch = false;
+                    scope.playerGoalsListContainer = false;
+                    scope.playerShotListContainer = scope.isToggled;
+
                 }
             };
         }   
