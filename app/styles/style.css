@@ -242,7 +242,11 @@ i.formattion{
     right: 332px;
     top: 1px;
 }
-
+#football_field{
+    background:url(../images/pitch.svg) no-repeat center center / contain;
+    height: 125px;
+    width: 250px;
+}
 /****-------------vg-volume--------------****/
 
 videogular vg-volume{

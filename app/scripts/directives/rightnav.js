@@ -43,7 +43,7 @@
                 scope.pitch = false;
                 scope.isToggled = open;
             };
-            console.log('vid API: ',API);
+            // console.log('vid API: ',API);
             scope.API = API;
 
 
